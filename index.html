@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./pages/index.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Место - Россия!</title>
+</head>
+
+<body class="page">
+
+  <section class="popup">
+    <form class="popup__container">
+      <button class="popup__close"></button>
+      <p class="popup__paragraph">Редактировать профиль</p>
+      <input class="popup__text popup__nameInput" type="text" value="Жак-Ив Кусто">
+      <input class="popup__text popup__jobInput" type="text" value="Исследователь океана">
+      <input class="popup__button" type="button" value="Сохранить">
+    </form>
+  </section>
+
+  <div class="wrapper">
+
+    <header class="header">
+      <img class="header__logo" src="./images/logo.png" alt="Логотип">
+    </header>
+
+    <main>
+
+      <section class="profile">
+        <div class="profile__info">
+          <img class="profile__foto" src="./images/fotoProfile.png" alt="Фото профиля">
+          <div class="profile__select-name">
+            <div class="profile__text">
+              <h1 class="profile__name">Жак-Ив Кусто</h1>
+              <p class="profile__profession">Исследователь океана</p>
+            </div>
+            <button class="profile__button"></button>
+          </div>
+        </div>
+        <button class="profile__addButton"></button>
+      </section>
+
+      <section class="photo-grids">
+
+        <figure class="photo-grids__card">
+          <img class="photo-grids__foto" src="./images/Карачаевск.jpg" alt="Фотография Карачаевска">
+          <figcaption class="photo-grids__panel">
+            <p class="photo-grids__text">Карачаевск</p>
+            <button class="photo-grids__button"></button>
+          </figcaption>
+        </figure>
+
+        <figure class="photo-grids__card">
+          <img class="photo-grids__foto" src="./images/Гора Эльбрус.jpg" alt="Фотография Эльбруса">
+          <figcaption class="photo-grids__panel">
+            <p class="photo-grids__text">Гора Эльбрус</p>
+            <button class="photo-grids__button"></button>
+          </figcaption>
+        </figure>
+
+        <figure class="photo-grids__card">
+          <img class="photo-grids__foto" src="./images/Домбай.jpg" alt="Фотография Домбая">
+          <figcaption class="photo-grids__panel">
+            <p class="photo-grids__text">Домбай</p>
+            <button class="photo-grids__button"></button>
+          </figcaption>
+        </figure>
+
+        <figure class="photo-grids__card">
+          <img class="photo-grids__foto" src="./images/Гора Эльбрус.jpg" alt="Фотография Эльбруса">
+          <figcaption class="photo-grids__panel">
+            <p class="photo-grids__text">Гора Эльбрус</p>
+            <button class="photo-grids__button"></button>
+          </figcaption>
+        </figure>
+
+        <figure class="photo-grids__card">
+          <img class="photo-grids__foto" src="./images/Домбай.jpg" alt="Фотография Домбая">
+          <figcaption class="photo-grids__panel">
+            <p class="photo-grids__text">Домбай</p>
+            <button class="photo-grids__button"></button>
+          </figcaption>
+        </figure>
+
+        <figure class="photo-grids__card">
+          <img class="photo-grids__foto" src="./images/Карачаевск.jpg" alt="Фотография Карачаевска">
+          <figcaption class="photo-grids__panel">
+            <p class="photo-grids__text">Карачаево-черкесская республика</p>
+            <button class="photo-grids__button"></button>
+          </figcaption>
+        </figure>
+
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <p class="footer_text">© 2022 Mesto Russia</p>
+    </footer>
+
+  </div>
+
+  <script src="./scripts/index.js"></script>
+</body>
+
+</html>

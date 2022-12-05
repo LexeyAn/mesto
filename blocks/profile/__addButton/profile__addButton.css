@@ -1,0 +1,29 @@
+.profile__addButton {
+  width: 150px;
+  height: 50px;
+  background-color: black;
+  background-image: url(../../../images/VectorPlus.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: 1px #FFFFFF solid;
+  cursor: pointer;
+  margin-left: 10px;
+  padding: 0;
+}
+
+@media screen and (max-width: 710px) {
+  .profile__addButton {
+    width: 100%;
+    margin: 33px 0 0 0;
+    background-image: url(../../../images/VectorPlusMin.png);
+  }
+}
+
+.profile__addButton:hover {
+  opacity: 0.6;
+}
+
+.profile__addButton:active {
+  box-shadow: -2px -2px 3px rgba(255, 255, 255, 0.6);
+}
+
