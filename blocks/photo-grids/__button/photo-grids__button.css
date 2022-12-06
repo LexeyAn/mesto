@@ -4,7 +4,7 @@
   margin-right: 20px;
   background-image: url(../../../images/serdce.svg);
   border: none;
-  background-color: white;
+  background-color: transparent;
   padding: 0;
   cursor: pointer;
 }

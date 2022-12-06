@@ -4,8 +4,7 @@
 
 
 @media screen and (max-width: 710px) {
-    .profile__info {
-    display: flex;
+  .profile__info {
     flex-direction: column;
   }
 }

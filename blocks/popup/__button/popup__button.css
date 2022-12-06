@@ -18,14 +18,11 @@
     height: 46px;
     font-size: 14px;
     line-height: 17px;
-    margin: 19px 0 0 22px;
+    margin-top: 19px;
+    margin-left: 22px;
   }
 }
 
-.popup__button:active {
-  box-shadow: -2px -2px 3px rgba(0, 0, 0, 0.6);
-}
-
 .popup__button:hover {
-  opacity: 0.8;
+  background-color: rgba(0, 0, 0, 0.8);
 }
