@@ -22,7 +22,7 @@
 @import url(../blocks/photo-grids/__button/photo-grids__button.css);
 @import url(../blocks/photo-grids/__button/photo-grids__button-black.css);
 @import url(../blocks/footer/footer.css);
-@import url(../blocks/footer/_text/footer_text.css);
+@import url(../blocks/footer/__text/footer__text.css);
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/popup/__container/popup__container.css);
