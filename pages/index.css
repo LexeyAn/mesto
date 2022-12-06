@@ -30,11 +30,3 @@
 @import url(../blocks/popup/__paragraph/popup__paragraph.css);
 @import url(../blocks/popup/__text/popup__text.css);
 @import url(../blocks/popup/__button/popup__button.css);
-
-
-
-
-/*
-* {
-  outline: 1px red solid;
-}
