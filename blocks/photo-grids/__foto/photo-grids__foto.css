@@ -4,4 +4,6 @@
   max-height: 282px;
   object-fit: cover;
   object-position: center center;
+  font-size: 14px;
+  display: block;
 }
