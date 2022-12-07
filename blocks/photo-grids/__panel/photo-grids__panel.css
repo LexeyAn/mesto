@@ -1,6 +1,7 @@
 .photo-grids__panel {
   background-color: white;
-  height: 79px;
+  min-height: 79px;
+  width: 100%;
   display: flex;
   color: black;
   justify-content: space-between;

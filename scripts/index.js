@@ -1,10 +1,9 @@
 let profile__button = document.querySelector('.profile__button');
 let popup = document.querySelector('.popup');
-let page = document.querySelector('.page');
 
-let formElement = document.querySelector('.popup__container');
-let nameInput = document.querySelector('.popup__text_box_nameInput');
-let jobInput = document.querySelector('.popup__text_box_jobInput');
+let formElement = document.forms.addProfile;
+let nameInput = formElement.elements.addName;
+let jobInput = formElement.elements.addJob;
 let profile__name = document.querySelector('.profile__name');
 let profile__profession = document.querySelector('.profile__profession');
 

@@ -26,59 +26,75 @@
               <h1 class="profile__name">Жак-Ив Кусто</h1>
               <p class="profile__profession">Исследователь океана</p>
             </div>
-            <button class="profile__button" type="button"></button>
+            <button class="profile__button" type="button" title="Кнопка редактирования профиля"></button>
           </div>
         </div>
-        <button class="profile__addButton" type="submit" name="addCard"></button>
+        <button class="profile__addButton" type="button" name="addCard"></button>
       </section>
 
-      <section class="photo-grids">
+      <section class="photo-grids" aria-label="Секция фотографий">
 
         <article class="photo-grids__card">
-          <img class="photo-grids__foto" src="./images/Карачаевск.jpg" alt="Фотография Карачаевска">
+          <div class="photo-grids__card-foto">
+            <img class="photo-grids__foto" src="./images/Карачаевск.jpg" alt="Фотография Карачаевска"
+              title="Фотография Карачаевска">
+          </div>
           <div class="photo-grids__panel">
             <h2 class="photo-grids__text">Карачаевск</h2>
-            <button class="photo-grids__button" type="submit" name="addLike"></button>
+            <button class="photo-grids__button" type="button" name="addLike"></button>
           </div>
         </article>
 
         <article class="photo-grids__card">
-          <img class="photo-grids__foto" src="./images/ГораЭльбрус.jpg" alt="Фотография Эльбруса">
+          <div class="photo-grids__card-foto">
+            <img class="photo-grids__foto" src="./images/ГораЭльбрус.jpg" alt="Фотография Эльбруса"
+              title="Фотография Эльбруса">
+          </div>
           <div class="photo-grids__panel">
             <h2 class="photo-grids__text">Гора Эльбрус</h2>
-            <button class="photo-grids__button" type="submit" name="addLike"></button>
+            <button class="photo-grids__button" type="button" name="addLike"></button>
           </div>
         </article>
 
         <article class="photo-grids__card">
-          <img class="photo-grids__foto" src="./images/Домбай.jpg" alt="Фотография Домбая">
+          <div class="photo-grids__card-foto">
+            <img class="photo-grids__foto" src="./images/Домбай.jpg" alt="Фотография Домбая" title="Фотография Домбая">
+          </div>
           <div class="photo-grids__panel">
             <h2 class="photo-grids__text">Домбай</h2>
-            <button class="photo-grids__button" type="submit" name="addLike"></button>
+            <button class="photo-grids__button" type="button" name="addLike"></button>
           </div>
         </article>
 
         <article class="photo-grids__card">
-          <img class="photo-grids__foto" src="./images/ГораЭльбрус.jpg" alt="Фотография Эльбруса">
+          <div class="photo-grids__card-foto">
+            <img class="photo-grids__foto" src="./images/ГораЭльбрус.jpg" alt="Фотография Эльбруса"
+              title="Фотография Эльбруса">
+          </div>
           <div class="photo-grids__panel">
             <h2 class="photo-grids__text">Гора Эльбрус</h2>
-            <button class="photo-grids__button" type="submit" name="addLike"></button>
+            <button class="photo-grids__button" type="button" name="addLike"></button>
           </div>
         </article>
 
         <article class="photo-grids__card">
-          <img class="photo-grids__foto" src="./images/Домбай.jpg" alt="Фотография Домбая">
+          <div class="photo-grids__card-foto">
+            <img class="photo-grids__foto" src="./images/Домбай.jpg" alt="Фотография Домбая" title="Фотография Домбая">
+          </div>
           <div class="photo-grids__panel">
             <h2 class="photo-grids__text">Домбай</h2>
-            <button class="photo-grids__button" type="submit" name="addLike"></button>
+            <button class="photo-grids__button" type="button" name="addLike"></button>
           </div>
         </article>
 
         <article class="photo-grids__card">
-          <img class="photo-grids__foto" src="./images/Карачаевск.jpg" alt="Фотография Карачаевска">
+          <div class="photo-grids__card-foto">
+            <img class="photo-grids__foto" src="./images/Карачаевск.jpg" alt="Фотография Карачаевска"
+              title="Фотография Карачаевска">
+          </div>
           <div class="photo-grids__panel">
             <h2 class="photo-grids__text">Карачаево-черкесская республика</h2>
-            <button class="photo-grids__button" type="submit" name="addLike"></button>
+            <button class="photo-grids__button" type="button" name="addLike"></button>
           </div>
         </article>
 
@@ -94,13 +110,12 @@
 
   <div class="popup">
     <div class="popup__container">
-      <button class="popup__close" type="reset"></button>
+      <button class="popup__close" type="button"></button>
       <h3 class="popup__paragraph">Редактировать профиль</h3>
       <form action="#" name="addProfile">
-        <input class="popup__text popup__text_box_nameInput" type="text" value="" placeholder="Введите имя"
-          name="addName" autocomplete="off">
-        <input class="popup__text popup__text_box_jobInput" type="text" value="" placeholder="Введите должность"
-          name="addJob" autocomplete="off">
+        <input class="popup__text" type="text" value="" placeholder="Введите имя" name="addName" autocomplete="off">
+        <input class="popup__text" type="text" value="" placeholder="Введите должность" name="addJob"
+          autocomplete="off">
         <input class="popup__button" type="submit" value="Сохранить" name="sendForm">
       </form>
     </div>

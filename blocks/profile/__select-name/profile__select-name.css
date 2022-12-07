@@ -1,6 +1,4 @@
 .profile__select-name {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  min-width: 282px;
 }
