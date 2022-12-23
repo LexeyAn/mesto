@@ -56,7 +56,7 @@ function createCard(item) {
   userCards.querySelector('.photo-grids__foto').alt = 'Фотография ' + item.name;
   userCards.querySelector('.photo-grids__text').textContent = item.name;
   userCards.querySelector('.photo-grids__foto').onerror = function () {
-    userCards.querySelector('.photo-grids__foto').src = '../images/noFoto.gif';
+    userCards.querySelector('.photo-grids__foto').src = './images/noFoto.gif';
     item.link = './images/noFoto.gif';
     item.name = "Фотография не загружена";
     userCards.querySelector('.photo-grids__text').style.cssText = 'font-size: 15px; color: red;';
