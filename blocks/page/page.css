@@ -9,4 +9,5 @@
   text-rendering: optimizeLegibility;
   color: #FFFFFF;
   position: relative;
+  user-select: none;
 }
