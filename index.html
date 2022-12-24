@@ -3,9 +3,11 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="./pages/index.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Место - Россия!</title>
+  <link rel="stylesheet" href="./pages/index.css">
+  <script src="./scripts/cards.js" defer></script>
+  <script src="./scripts/index.js" defer></script>
 </head>
 
 <body class="page">
@@ -29,7 +31,7 @@
             <button class="profile__button" type="button" title="Кнопка редактирования профиля"></button>
           </div>
         </div>
-        <button class="profile__addButton" type="button" name="addCard"></button>
+        <button class="profile__addButton" type="button" name="addCard" title="Кнопка добавления карточки"></button>
       </section>
 
       <section class="photo-grids" aria-label="Секция фотографий"></section>
@@ -44,34 +46,35 @@
 
   <div class="popup">
     <div class="popup__container">
-      <button class="popup__close" type="button"></button>
+      <button class="popup__close" type="button" title="Кнопка закрытия"></button>
       <h3 class="popup__paragraph">Редактировать профиль</h3>
       <form action="#" name="addProfile">
-        <input class="popup__text" type="text" value="" placeholder="Введите имя" name="addName" autocomplete="off">
-        <input class="popup__text" type="text" value="" placeholder="Введите должность" name="addJob"
-          autocomplete="off">
-        <input class="popup__button" type="submit" value="Сохранить" name="sendForm">
+        <input class="popup__text" type="text" placeholder="Введите имя" name="addName" autocomplete="off" required>
+        <input class="popup__text" type="text" placeholder="Введите должность" name="addJob" autocomplete="off"
+          required>
+        <input class="popup__button" type="submit" value="Сохранить" name="sendForm" title="Кнопка сохранения профиля">
       </form>
     </div>
   </div>
 
   <div class="popup-addcard">
     <div class="popup-addcard__container">
-      <button class="popup-addcard__close" type="button"></button>
+      <button class="popup-addcard__close" type="button" title="Кнопка закрытия"></button>
       <h3 class="popup-addcard__paragraph">Новое место</h3>
       <form action="#" name="addCard">
-        <input class="popup-addcard__text" type="text" value="" placeholder="Название" name="namePlace"
-          autocomplete="off">
-        <input class="popup-addcard__text" type="text" value="" placeholder="Ссылка на картинку" name="linkPlace"
-          autocomplete="off">
-        <input class="popup-addcard__button" type="submit" value="Создать" name="sendForm">
+        <input class="popup-addcard__text" type="text" placeholder="Название" name="namePlace" autocomplete="off"
+          required>
+        <input class="popup-addcard__text" type="url" placeholder="Ссылка на картинку" name="linkPlace"
+          autocomplete="off" required>
+        <input class="popup-addcard__button" type="submit" value="Создать" name="sendForm"
+          title="Кнопка сохранения карточки">
       </form>
     </div>
   </div>
 
   <div class="popup-foto">
     <figure class="popup-foto__figure">
-      <button class="popup-foto__close" type="button"></button>
+      <button class="popup-foto__close" type="button" title="Кнопка закрытия"></button>
       <img class="popup-foto__foto" src="#" alt="" title="">
       <figcaption>
         <p class="popup-foto__caption"></p>
@@ -81,16 +84,15 @@
 
   <template class="template-card">
     <article class="photo-grids__card">
-      <button class="photo-grids__basket" type="button"></button>
+      <button class="photo-grids__basket" type="button" title="Кнопка удаления карточки"></button>
       <img class="photo-grids__foto" src="#" alt="" title="">
       <div class="photo-grids__panel">
         <h2 class="photo-grids__text"></h2>
-        <button class="photo-grids__button" type="button"></button>
+        <button class="photo-grids__button" type="button" title="Лайк"></button>
       </div>
     </article>
   </template>
 
-  <script src="./scripts/index.js"></script>
 </body>
 
 </html>
