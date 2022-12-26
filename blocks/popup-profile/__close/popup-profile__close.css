@@ -1,4 +1,4 @@
-.popup__close {
+.popup-profile__close {
   width: 32px;
   height: 32px;
   background-image: url(../../../images/Close.png);
@@ -16,7 +16,7 @@
 }
 
 @media screen and (max-width: 575px) {
-  .popup__close {
+  .popup-profile__close {
     width: 20px;
     height: 20px;
     right: 0;
@@ -24,6 +24,6 @@
   }
 }
 
-.popup__close:hover {
+.popup-profile__close:hover {
   opacity: 0.6;
 }

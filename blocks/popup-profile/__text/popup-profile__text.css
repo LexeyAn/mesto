@@ -1,4 +1,4 @@
-.popup__text {
+.popup-profile__text {
   border: none;
   border-bottom: 1px rgba(0, 0, 0, 0.2) solid;
   width: 358px;
@@ -9,7 +9,7 @@
 }
 
 @media screen and (max-width: 575px) {
-  .popup__text {
+  .popup-profile__text {
     margin-bottom: 26px;
     margin-left: 20px;
     line-height: 29px;

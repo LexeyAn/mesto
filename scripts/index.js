@@ -1,12 +1,12 @@
 const profileButton = document.querySelector('.profile__button');
-const popupProfile = document.querySelector('.popup');
+const popupProfile = document.querySelector('.popup-profile');
 //форма загрузки профиля
 const formProfile = document.forms.addProfile;
 const nameInputProfile = formProfile.elements.addName;
 const jobInputProfile = formProfile.elements.addJob;
 const profileName = document.querySelector('.profile__name');
 const profileProfession = document.querySelector('.profile__profession');
-const popupProfileCloseButton = document.querySelector('.popup__close');
+const popupProfileCloseButton = document.querySelector('.popup-profile__close');
 // попап добавления карточек
 const buttonAddCard = document.querySelector('.profile__addButton');
 const popupAddСard = document.querySelector('.popup-addcard');
@@ -27,19 +27,20 @@ function createCard(item) {
   const userCards = templateCard.cloneNode(true);
   const userCardsFoto = userCards.querySelector('.photo-grids__foto');
   const userCardsText = userCards.querySelector('.photo-grids__text');
+  const fotoName = `Фотография ${item.name}`;
+  const fotoNo = `${item.name} - фото не загружено`;
   userCardsFoto.src = item.link;
-  userCardsFoto.title = 'Фотография ' + item.name;
-  userCardsFoto.alt = 'Фотография ' + item.name;
+  userCardsFoto.title = fotoName;
+  userCardsFoto.alt = fotoName;
   userCardsText.textContent = item.name;
   userCardsText.title = item.name;
   userCardsFoto.onerror = function () {
     userCardsFoto.src = './images/noFoto.jpg';
     item.link = './images/noFoto.jpg';
-    // раз нет необходимости изменять текст, то и нет смысла в этой фиче. А так бы добавил класс.
-    userCardsText.textContent = item.name + " - фото не загружено";
-    userCardsText.title = item.name + " - фото не загружено";
-    userCardsFoto.title = 'Фотография ' + item.name;
-    userCardsFoto.alt = 'Фотография ' + item.name;
+    userCardsText.textContent = fotoNo;
+    userCardsText.title = fotoNo;
+    userCardsFoto.title = fotoName;
+    userCardsFoto.alt = fotoName;
   };
 
   //обработчик удаления карточки
@@ -50,8 +51,8 @@ function createCard(item) {
   userCardsFoto.addEventListener('click', function () {
     const popupFotoFoto = popupFoto.querySelector('.popup-foto__foto');
     popupFotoFoto.src = item.link;
-    popupFotoFoto.title = 'Фотография ' + item.name;
-    popupFotoFoto.alt = 'Фотография ' + item.name;
+    popupFotoFoto.title = fotoName;
+    popupFotoFoto.alt = fotoName;
     popupFoto.querySelector('.popup-foto__caption').textContent = item.name;
     openPopup(popupFoto);
   });
@@ -116,8 +117,7 @@ profileButton.addEventListener('click', function () {
 //слушатели попапа добавления карточек
 buttonAddCard.addEventListener('click', function () {
   openPopup(popupAddСard);
-  namePlace.value = '';
-  linkPlace.value = '';
+  formAddCard.reset();
 });
 
 popupAddСardCloseButton.addEventListener('click', function () {

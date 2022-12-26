@@ -1,4 +1,4 @@
-.popup__paragraph {
+.popup-profile__paragraph {
   font-weight: 900;
   font-size: 24px;
   line-height: 29px;
@@ -8,7 +8,7 @@
 
 
 @media screen and (max-width: 575px) {
-  .popup__paragraph {
+  .popup-profile__paragraph {
     font-size: 18px;
     margin-left: 22px;
     padding-bottom: 64px;

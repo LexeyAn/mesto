@@ -1,4 +1,4 @@
-.popup__button {
+.popup-profile__button {
   width: 358px;
   height: 50px;
   margin: 21px 0 0 36px;
@@ -15,7 +15,7 @@
 
 
 @media screen and (max-width: 575px) {
-  .popup__button {
+  .popup-profile__button {
     width: 238px;
     height: 46px;
     font-size: 14px;
@@ -25,6 +25,6 @@
   }
 }
 
-.popup__button:hover {
+.popup-profile__button:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
