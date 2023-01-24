@@ -26,12 +26,10 @@
 /* попап профиля */
 @import url(../blocks/popup-profile/popup-profile.css);
 @import url(../blocks/popup-profile/__container/popup-profile__container.css);
-@import url(../blocks/popup-profile/__close/popup-profile__close.css);
 @import url(../blocks/popup-profile/__paragraph/popup-profile__paragraph.css);
 /* попап добавления карточек */
 @import url(../blocks/popup-addcard/popup-addcard.css);
 @import url(../blocks/popup-addcard/__container/popup-addcard__container.css);
-@import url(../blocks/popup-addcard/__close/popup-addcard__close.css);
 @import url(../blocks/popup-addcard/__paragraph/popup-addcard__paragraph.css);
 /* попап фото */
 @import url(../blocks/popup-foto/popup-foto.css);
@@ -39,10 +37,12 @@
 @import url(../blocks/popup-foto/__figure/popup-foto__figure.css);
 @import url(../blocks/popup-foto/__caption/popup-foto__caption.css);
 @import url(../blocks/popup-foto/__foto/popup-foto__foto.css);
-@import url(../blocks/popup-foto/__close/popup-foto__close.css);
-@import url(../blocks/popup/_opened/popup_opened.css);
 /* стилизация форм */
 @import url(../blocks/form/__input/form__input.css);
 @import url(../blocks/form/__input/_type/_error/form__input_type_error.css);
 @import url(../blocks/form/__submit/form__submit.css);
 @import url(../blocks/form/__input-error/form__input-error.css);
+/* стилизация попапов (общее)*/
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/_opened/popup_opened.css);
+@import url(../blocks/popup/__close/popup__close.css);
