@@ -21,6 +21,10 @@ const linkPlace = formAddCard.elements.linkPlace;
 // загрузка карточек скриптом
 const photoGrids = document.querySelector('.photo-grids');
 const templateCard = document.querySelector('.template-card').content.querySelector('.photo-grids__card');
+// обнуление ошибок валидации
+const formInputError = document.querySelectorAll('.form__input-error');
+const formInput = document.querySelectorAll('.form__input');
+const formSubmit = document.querySelectorAll('.form__submit');
 
 function createCard(item) {
   //добавление карточки с заданием параметров
@@ -42,7 +46,6 @@ function createCard(item) {
     userCardsFoto.title = fotoName;
     userCardsFoto.alt = fotoName;
   };
-
   //обработчик удаления карточки
   userCards.querySelector('.photo-grids__basket').addEventListener('click', function () {
     userCards.remove();
@@ -73,8 +76,6 @@ function renderStartCards() {
   });
 };
 
-renderStartCards();
-
 function addCardSubmit(event) {
   event.preventDefault();
   prependCard({
@@ -91,14 +92,51 @@ function handleFormProfileSubmit(evt) {
   profileProfession.textContent = jobInputProfile.value;
   closePopup(popupProfile);
 }
+
+// функция по esc
+function addListenerEsc(e) {
+  let key = e.key;
+  if (key == "Escape") {
+    closePopup(popupProfile);
+    closePopup(popupAddСard);
+    closePopup(popupFoto);
+  };
+};
+
 //функция открытия попапов
 function openPopup(popups) {
   popups.classList.add('popup_opened');
+  window.addEventListener('keyup', addListenerEsc);
 };
 
 //функция закрытия попапов
 function closePopup(popups) {
   popups.classList.remove('popup_opened');
+  window.removeEventListener('keyup', addListenerEsc);
+  for (let i = 0; i < 4; i++) {
+    formInputError[i].textContent = '';
+    formInputError[i].classList.remove('form__input-error_active');
+    formInput[i].classList.remove('form__input_type_error');
+  }
+};
+
+// функция закрытия попапа при щелчке вне попапа
+function closePopupOutZone(event, popup) {
+  if (event == popup) {
+    closePopup(popup);
+  };
+}
+
+popupProfile.onclick = function (event) {
+  closePopupOutZone(event.target, popupProfile);
+};
+
+popupAddСard.onclick = function (event) {
+  closePopupOutZone(event.target, popupAddСard);
+};
+
+popupFoto.onclick = function (event) {
+  closePopupOutZone(event.target, popupFoto);
 };
 
 // слушатели попапа профиля
@@ -112,12 +150,14 @@ profileButton.addEventListener('click', function () {
   openPopup(popupProfile);
   nameInputProfile.value = profileName.textContent;
   jobInputProfile.value = profileProfession.textContent;
+  formSubmit[0].setAttribute("disabled", true);
 });
 
 //слушатели попапа добавления карточек
 buttonAddCard.addEventListener('click', function () {
   openPopup(popupAddСard);
   formAddCard.reset();
+  formSubmit[1].setAttribute("disabled", true);
 });
 
 popupAddСardCloseButton.addEventListener('click', function () {
@@ -130,3 +170,5 @@ formAddCard.addEventListener('submit', addCardSubmit);
 popupFotoCloseButton.addEventListener('click', function () {
   closePopup(popupFoto);
 });
+
+renderStartCards();
