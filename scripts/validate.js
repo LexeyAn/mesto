@@ -57,4 +57,3 @@ enableValidation({
   submitButtonSelector: '.form__submit',
   inputErrorClass: 'form__input_type_error',
 });
-
