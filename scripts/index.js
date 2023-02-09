@@ -1,10 +1,12 @@
+import Card from "./Card.js";
+import FormValidator from "./FormValidator.js";
+import initialCards from "./cards.js";
 const profileButton = document.querySelector('.profile__button');
 const popupProfile = document.querySelector('.popup-profile');
 //форма загрузки профиля
 const formProfile = document.forms.addProfile;
 const nameInputProfile = formProfile.elements.addName;
 const jobInputProfile = formProfile.elements.addJob;
-const buttonFormProfile = formProfile.elements.sendForm;
 const profileName = document.querySelector('.profile__name');
 const profileProfession = document.querySelector('.profile__profession');
 // попап добавления карточек
@@ -22,56 +24,29 @@ const popups = document.querySelectorAll('.popup');
 const formAddCard = document.forms.addCard;
 const namePlace = formAddCard.elements.namePlace;
 const linkPlace = formAddCard.elements.linkPlace;
-const buttonFormAddCard = formAddCard.elements.sendForm;
 // загрузка карточек скриптом
 const photoGrids = document.querySelector('.photo-grids');
-const templateCard = document.querySelector('.template-card').content.querySelector('.photo-grids__card');
-// обнуление ошибок валидации
-const formInputsError = document.querySelectorAll('.form__input-error');
-const formInputs = document.querySelectorAll('.form__input');
+// объект настроек
+const settingsObject = {
+  formSelector: '.form',
+  inputSelector: '.form__input',
+  submitButtonSelector: '.form__submit',
+  inputErrorClass: 'form__input_type_error',
+};
+const formProfileValidator = new FormValidator(settingsObject, formProfile);
+const formAddCardValidator = new FormValidator(settingsObject, formAddCard);
 
-function createCard(item) {
-  //добавление карточки с заданием параметров
-  const userCards = templateCard.cloneNode(true);
-  const userCardsFoto = userCards.querySelector('.photo-grids__foto');
-  const userCardsText = userCards.querySelector('.photo-grids__text');
-  const fotoName = `Фотография ${item.name}`;
-  const fotoNo = `${item.name} - фото не загружено`;
-  const photoGridsButton = userCards.querySelector('.photo-grids__button');
-  userCardsFoto.src = item.link;
-  userCardsFoto.title = fotoName;
-  userCardsFoto.alt = fotoName;
-  userCardsText.textContent = item.name;
-  userCardsText.title = item.name;
-  userCardsFoto.onerror = function () {
-    userCardsFoto.src = './images/noFoto.jpg';
-    item.link = './images/noFoto.jpg';
-    userCardsText.textContent = fotoNo;
-    userCardsText.title = fotoNo;
-    userCardsFoto.title = fotoName;
-    userCardsFoto.alt = fotoName;
-  };
-  //обработчик удаления карточки
-  userCards.querySelector('.photo-grids__basket').addEventListener('click', function () {
-    userCards.remove();
-  });
-  //обработчик на попап фото
-  userCardsFoto.addEventListener('click', function () {
-    popupFotoFoto.src = item.link;
-    popupFotoFoto.title = fotoName;
-    popupFotoFoto.alt = fotoName;
-    popupFotoCaption.textContent = item.name;
-    openPopup(popupFoto);
-  });
-  //навешивание слушателя на лайк фото
-  photoGridsButton.addEventListener('click', function () {
-    photoGridsButton.classList.toggle('photo-grids__button_active');
-  });
-  return userCards
+function handleCardClick(name, link, fotoName) {
+  popupFotoFoto.src = link;
+  popupFotoFoto.title = fotoName;
+  popupFotoFoto.alt = fotoName;
+  popupFotoCaption.textContent = name;
+  openPopup(popupFoto);
 }
 
 function prependCard(item) {
-  photoGrids.prepend(createCard(item));
+  const newCard = new Card(item, '.template-card', handleCardClick);
+  photoGrids.prepend(newCard.createCard());
 }
 
 function renderStartCards() {
@@ -95,15 +70,6 @@ function handleFormProfileSubmit(evt) {
   profileName.textContent = nameInputProfile.value;
   profileProfession.textContent = jobInputProfile.value;
   closePopup(popupProfile);
-}
-
-// функция очищения от ошибок
-function clearErrorForm() {
-  for (let i = 0; i < formInputsError.length; i++) {
-    formInputsError[i].textContent = '';
-    formInputsError[i].classList.remove('form__input-error_active');
-    formInputs[i].classList.remove('form__input_type_error');
-  }
 }
 
 // функция по esc
@@ -138,18 +104,16 @@ formProfile.addEventListener('submit', handleFormProfileSubmit);
 
 profileButton.addEventListener('click', function () {
   openPopup(popupProfile);
-  clearErrorForm();
   nameInputProfile.value = profileName.textContent;
   jobInputProfile.value = profileProfession.textContent;
-  buttonFormProfile.setAttribute("disabled", true);
+  formProfileValidator.clearErrorForm();
 });
 
 //слушатели попапа добавления карточек
 buttonAddCard.addEventListener('click', function () {
   openPopup(popupAddСard);
-  clearErrorForm();
   formAddCard.reset();
-  buttonFormAddCard.setAttribute("disabled", true);
+  formAddCardValidator.clearErrorForm();
 });
 
 formAddCard.addEventListener('submit', handleCardSubmit);
@@ -168,3 +132,6 @@ popups.forEach((popup) => {
 });
 
 renderStartCards();
+
+formProfileValidator.enableValidation();
+formAddCardValidator.enableValidation();
