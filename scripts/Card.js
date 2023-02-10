@@ -11,9 +11,17 @@ export default class Card {
   }
 
   _setListeners() {
-    this._userCard.querySelector('.photo-grids__basket').addEventListener('click', () => this._userCard.remove());
+    this._userCard.querySelector('.photo-grids__basket').addEventListener('click', () => this._deleteCard());
     this._userCardFoto.addEventListener('click', () => this._handleCardClick(this._name, this._link, this._fotoName));
-    this._photoGridsButton.addEventListener('click', () => this._photoGridsButton.classList.toggle('photo-grids__button_active'));
+    this._photoGridsButton.addEventListener('click', () => this._likeCard());
+  }
+
+  _deleteCard() {
+    this._userCard.remove();
+  }
+
+  _likeCard() {
+    this._photoGridsButton.classList.toggle('photo-grids__button_active');
   }
 
   createCard() {

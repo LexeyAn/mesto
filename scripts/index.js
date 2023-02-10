@@ -44,9 +44,12 @@ function handleCardClick(name, link, fotoName) {
   openPopup(popupFoto);
 }
 
+function createCard(item) {
+  return new Card(item, '.template-card', handleCardClick);
+}
+
 function prependCard(item) {
-  const newCard = new Card(item, '.template-card', handleCardClick);
-  photoGrids.prepend(newCard.createCard());
+  photoGrids.prepend(createCard(item).createCard());
 }
 
 function renderStartCards() {
@@ -74,8 +77,7 @@ function handleFormProfileSubmit(evt) {
 
 // функция по esc
 function addListenerEsc(e) {
-  const key = e.key;
-  if (key == "Escape") {
+   if (e.key === "Escape") {
     closePopup(document.querySelector('.popup_opened'));
   };
 };
