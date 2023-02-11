@@ -45,11 +45,12 @@ function handleCardClick(name, link, fotoName) {
 }
 
 function createCard(item) {
-  return new Card(item, '.template-card', handleCardClick);
+  const card = new Card(item, '.template-card', handleCardClick);
+  return card.createCard();
 }
 
 function prependCard(item) {
-  photoGrids.prepend(createCard(item).createCard());
+  photoGrids.prepend(createCard(item));
 }
 
 function renderStartCards() {
